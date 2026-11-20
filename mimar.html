@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المعمار الهندسية | لأعمال الزجاج</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Amiri',serif;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:#0C0C0C;color:#EDEDE8;line-height:2.1;overflow-x:hidden;font-size:18px}
+a{text-decoration:none;color:inherit}
+button,.btn,.variant,.order-btn,.open-btn,.whats,nav a{transition:all .25s ease;cursor:pointer;position:relative;overflow:hidden}
+button:active,.btn:active,.variant:active,.order-btn:active,.open-btn:active{transform:scale(.96)}
+/* --- حركة الضغط Ripple --- */
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rippleAnim .6s linear;pointer-events:none;z-index:1}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+.btn-gold2 .ripple,.order-btn .ripple{background:rgba(0,0,0,.18)}
+/* --- ستارة التنقل بين الصفحات --- */
+#pageTrans{position:fixed;inset:0;background:#0C0C0C;z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+#pageTrans.show{opacity:1;pointer-events:auto}
+#pageTrans span{color:#B9975B;font-size:30px;letter-spacing:3px;animation:pulse .8s ease infinite}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(.96)}50%{opacity:1;transform:scale(1)}}
+/* --- ظهور الأقسام بحركة --- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.hero-box{animation:heroIn .9s ease both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.card{animation:cardIn .5s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.img-slot{width:100%;height:auto;min-height:220px;border:none;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:17px;overflow:hidden;padding:12px}
+.img-slot.small{height:170px}
+.img-slot.hero-extra{height:200px;margin-top:18px;background:#111}
+.product-img{width:100%;height:180px;border-bottom:1px dashed rgba(185,151,91,.4);background:#fff;display:flex;align-items:center;justify-content:center;color:#888;font-size:16px;background-size:contain;background-position:center;background-repeat:no-repeat}
+.product-img img{width:100%;height:100%;object-fit:contain;background:#fff;display:block}
+.img-slot img{width:100%;height:auto;max-height:320px;object-fit:contain;display:block}
+#loader{position:fixed;inset:0;background:#0C0C0C;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .9s ease}
+#loader.hide{opacity:0;pointer-events:none}
+#loader h1{font-size:52px;font-weight:400;letter-spacing:4px;color:#fff}
+#loader span{color:#B9975B;letter-spacing:6px;font-size:13px;margin-top:4px}
+#loader .line{width:110px;height:1px;background:#2A2A2A;margin:22px 0;position:relative;overflow:hidden}
+#loader .line i{position:absolute;inset:0;background:#B9975B;transform-origin:right;animation:load 1.4s ease forwards}
+@keyframes load{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+#loader p{font-size:14px;color:#777}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 6% 14px;background:rgba(12,12,12,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:30px;font-weight:700;line-height:1.1;cursor:pointer;user-select:none}.logo span{display:block;font-size:11px;letter-spacing:4px;color:#B9975B;font-weight:400}
+nav{display:flex;gap:4px;margin-top:14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{padding:7px 16px;border-radius:30px;font-size:17px;color:#CFCFC8;flex-shrink:0}
+nav a:hover,nav a.active{color:#fff;background:rgba(255,255,255,.07)}
+nav a.active{box-shadow:inset 0 -2px 0 #B9975B}
+.btn-gold{background:#B9975B!important;color:#0C0C0C!important;font-weight:700!important}
+.hero{min-height:92vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:130px 6% 55px;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.35) 55%,rgba(12,12,12,.97) 98%),url('1.jpg.jpg') center top/cover no-repeat}
+.hero-box{max-width:720px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:28px 22px;border-radius:20px}
+.hero small{color:#B9975B;letter-spacing:4px;font-size:15px}
+.hero h1{font-size:58px;line-height:1.25;margin:12px 0;font-weight:400}
+.hero p{color:#D8D8D2;font-size:20px;max-width:620px;margin:auto}
+.hero-btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{padding:13px 34px;border-radius:40px;font-weight:700;font-size:18px;display:inline-block;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.btn-gold2{background:#B9975B;color:#0C0C0C}
+.btn-gold2:hover{background:#C9AE7A}
+.btn-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.section{padding:80px 6%;max-width:1150px;margin:auto}
+.kicker{color:#B9975B;letter-spacing:3px;font-size:15px}
+.section h2{font-size:38px;line-height:1.4;margin:10px 0;font-weight:400}
+.section .sub{color:#9A9A93;max-width:680px;font-size:19px}
+.divider{width:48px;height:1px;background:#B9975B;margin:18px 0}
+.about{background:#121212;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:38px}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.why div{background:#161616;border:1px solid rgba(255,255,255,.05);padding:20px;border-radius:14px;font-size:18px}
+.why div b{color:#EDEDE8;display:block;font-size:19px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;text-align:center}
+.stats div{background:#121212;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px}
+.stats b{font-size:26px;color:#B9975B;display:block;font-weight:400}.stats span{font-size:15px;color:#888}
+.cat-title{font-size:24px;font-weight:700;margin:52px 0 18px;padding:0 0 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.cat-title span{color:#B9975B}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.card{background:#131313;border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;cursor:pointer;transition:.3s;position:relative}
+.card:hover{border-color:rgba(185,151,91,.5);transform:translateY(-3px)}
+.card.active{border-color:#B9975B}
+.card-top{padding:24px;display:flex;justify-content:space-between;gap:12px}
+.card-top h3{color:#fff;font-size:25px;font-weight:700}.card-top p{color:#9A9A93;font-size:17px}
+.badge{display:inline-block;color:#B9975B;font-size:15px;margin-top:8px;border:1px solid rgba(185,151,91,.35);padding:3px 12px;border-radius:20px}
+.card-icon{font-size:28px;opacity:.8}
+.open-btn{background:transparent;color:#EDEDE8;border:1px solid rgba(255,255,255,.25);padding:9px 20px;border-radius:30px;font-weight:700;font-size:16px;margin:0 24px 20px}
+.card.active .open-btn{background:#B9975B;color:#0C0C0C;border-color:#B9975B}
+.details{display:none;background:#0C0C0C;border-top:1px solid rgba(255,255,255,.07);padding:22px}
+.card.active .details{display:block;animation:detailIn .4s ease both}
+@keyframes detailIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.details h4{margin-bottom:12px;color:#B9975B;font-size:19px;font-weight:700}
+.variants{display:flex;flex-wrap:wrap;gap:9px}
+.variant{border:1px solid rgba(255,255,255,.14);background:#161616;color:#EDEDE8;padding:11px 16px;border-radius:30px;display:flex;gap:8px;align-items:center;font-weight:700;font-size:17px}
+.variant:hover{border-color:#B9975B;transform:translateY(-1px)}
+.variant.selected{border-color:#B9975B;background:#B9975B;color:#0C0C0C;transform:scale(1.03)}
+.variant .check{display:none}.variant.selected .check{display:inline}
+.dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);flex-shrink:0}
+.selected-note{margin-top:14px;color:#B9975B;font-size:17px;display:none}
+.order-btn{display:block;text-align:center;background:#B9975B;color:#0C0C0C;padding:12px;border-radius:30px;font-weight:700;margin-top:14px;font-size:18px}
+.order-btn:hover{background:#C9AE7A}
+.luxury{margin:24px 0;border-radius:20px;min-height:340px;display:flex;align-items:center;padding:38px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('1.jpg.jpg') center/cover}
+.luxury h2{font-size:34px}.luxury p{color:#D8D8D2;max-width:520px;font-size:19px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.features div{background:#131313;border:1px solid rgba(255,255,255,.07);padding:22px;border-radius:16px;text-align:center}
+.features div b{color:#fff;display:block;font-size:20px}.features div p{font-size:16px;color:#9A9A93}
+.contact-box{background:#121212;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.contact-box input,.contact-box textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0C0C0C;color:#fff;margin-bottom:12px;font-size:17px}
+.contact-box input:focus,.contact-box textarea:focus{outline:none;border-color:#B9975B}
+.contact-box button{background:#B9975B;color:#0C0C0C;border:none;padding:14px;border-radius:30px;width:100%;font-weight:700;font-size:19px}
+.contact-box button:hover{background:#C9AE7A}
+.info-item{background:#161616;padding:16px;border-radius:14px;margin-bottom:12px;font-size:18px}.info-item b{color:#B9975B}
+.whats{display:block;text-align:center;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);padding:13px;border-radius:30px;font-weight:700;margin-top:10px;font-size:18px}
+.whats:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1px solid rgba(255,255,255,.06);font-size:16px}footer b{color:#EDEDE8}footer span{color:#B9975B}
+.card.sold{opacity:.55;filter:grayscale(.6)}
+.sold-badge{position:absolute;top:10px;left:10px;background:#EF4444;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;z-index:5;display:none}
+.card.sold .sold-badge{display:block}
+#adminModal{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
+#adminModal.show{display:flex}
+.admin-box{background:#161616;width:100%;max-width:430px;border-radius:20px;padding:22px;border:1px solid rgba(185,151,91,.4);margin-top:20px}
+.admin-box h3{color:#fff;font-size:24px}
+.admin-box input{width:100%;padding:13px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:#0C0C0C;color:#fff;margin-top:12px;font-size:17px}
+.admin-box .abtn{background:#B9975B;color:#0C0C0C;border:none;padding:13px;border-radius:30px;width:100%;font-weight:700;font-size:18px;margin-top:12px}
+.admin-row{background:#0C0C0C;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.admin-row b{color:#fff;font-size:17px}
+.admin-row button{border:none;padding:8px 14px;border-radius:20px;font-weight:700;white-space:nowrap}
+@media(max-width:800px){.hero h1{font-size:38px}.hero{min-height:92vh}.why,.contact-box,.stats{grid-template-columns:1fr}.features{grid-template-columns:1fr}.section h2{font-size:30px}.luxury{padding:26px}}
+@media(max-width:767px){
+.section{padding:60px 3%}
+.grid{gap:8px}
+.product-img{height:110px;font-size:13px}
+.card-top{padding:12px}
+.card-top h3{font-size:18px;line-height:1.3}
+.card-top p{font-size:13px;line-height:1.5}
+.badge{font-size:12px;padding:2px 8px}
+.open-btn{margin:0 12px 12px;padding:7px 10px;font-size:13px;width:calc(100% - 24px)}
+.card-icon{display:none}
+.details{padding:14px}
+}
+</style>
+</head>
+<body>
+
+<div id="pageTrans"><span>المعمار • ALMIMAR</span></div>
+<div id="loader"><h1>المعمار</h1><span>ALMIMAR FOR GLASS WORK</span><div class="line"><i></i></div><p>لأعمال الزجاج والألمنيوم</p></div>
+
+<header>
+<div class="top">
+<div class="logo" id="secretLogo">المعمار<span>ALMIMAR FOR GLASS WORK</span></div>
+<a href="#contact" class="btn btn-gold" style="padding:9px 22px;font-size:16px">اطلب عرض سعر</a>
+</div>
+<nav>
+<a href="#home" class="active">الرئيسية</a>
+<a href="#menu">القائمة</a>
+<a href="#about">من نحن</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-box">
+<small>المعمار الهندسية — لأعمال الزجاج</small>
+<h1>حيث تبدأ الفخامة</h1>
+<p>حلول متكاملة في توريد وتركيب الزجاج، بأعلى معايير الجودة والخبرة، وتصاميم عصرية تناسب أرقى المشاريع.</p>
+<div class="hero-btns">
+<a href="#menu" class="btn btn-gold2">اكتشف القائمة</a>
+<a href="#about" class="btn btn-dark">من نحن</a>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="about">
+<div class="about">
+<span class="kicker">من نحن</span>
+<h2>مجموعتنا الحصرية</h2>
+<div class="divider"></div>
+<div class="img-slot"><img src="2.jpg.jpg" alt="من نحن - المعمار"></div>
+<p class="sub" style="margin-top:18px">تقدم شركة المعمار الهندسية حلولاً متكاملة في مجال توريد وتركيب الزجاج بأعلى معايير الجودة والخبرة، بفريق احترافي يلبي متطلبات المشاريع السكنية والتجارية والإدارية الحديثة.</p>
+<div class="why">
+<div><b>جودة عالية</b> في المواد والتنفيذ</div>
+<div><b>تصاميم عصرية</b> تناسب مختلف المشاريع</div>
+<div><b>فريق فني متخصص</b> وخبرة احترافية</div>
+<div><b>الالتزام بالمواعيد</b> والدقة في التفاصيل</div>
+</div>
+<div class="stats">
+<div><b>100%</b><span>الخصوصية</span></div>
+<div><b>24/7</b><span>الجودة</span></div>
+<div><b>360°</b><span>الإطلالة الشاملة</span></div>
+<div><b>+500 م²</b><span>المساحات الواسعة</span></div>
+</div>
+</div>
+<div class="luxury"><div><span class="kicker">أسلوب حياة يفوق التوقعات</span><h2>اكتشف الفخامة من الداخل</h2><div class="divider"></div><p>تصاميم زجاجية تمنح منزلك إضاءة طبيعية، ومساحات واسعة، وإحساساً بالفخامة في كل التفاصيل.</p></div></div>
+<div class="features">
+<div><b>المدخل الرئيسي</b><p>واجهات فخمة تليق بمنزلك</p></div>
+<div><b>المساحات الداخلية</b><p>فواصل زجاجية أنيقة</p></div>
+</div>
+</section>
+
+<section class="section reveal" id="menu">
+<span class="kicker">القائمة</span>
+<h2>جميع خدماتنا</h2>
+<div class="divider"></div>
+<p class="sub">اضغط على أي خدمة لعرض أنواعها، ثم اختر النوع المناسب واطلب الخدمة.</p>
+<div class="cat-title">أنواع <span>الزجاج</span></div>
+<div class="grid">
+<div class="card" data-idx="0" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج عاكس</div><div class="card-top"><div><h3>زجاج عاكس</h3><p>زجاج عاكس للعزل والخصوصية والمظهر العصري</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','بني')"><span class="dot" style="background:#6B3A1F"></span> عاكس بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','أزرق')"><span class="dot" style="background:#1E6FB8"></span> عاكس أزرق <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','أخضر')"><span class="dot" style="background:#1E8A4A"></span> عاكس أخضر <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="1" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج بيرسون</div><div class="card-top"><div><h3>زجاج بيرسون</h3><p>زجاج بيرسون بتشطيب مميز وألوان أنيقة</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','بني')"><span class="dot" style="background:#7A4A2B"></span> بيرسون بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','أخضر')"><span class="dot" style="background:#2E9E5B"></span> بيرسون أخضر <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','أزرق')"><span class="dot" style="background:#2A7FD4"></span> بيرسون أزرق <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="2" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج خلية</div><div class="card-top"><div><h3>زجاج خلية</h3><p>زجاج خلية بتصميم جميل وخصوصية عالية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج خلية','أبيض')"><span class="dot" style="background:#fff"></span> خلية أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج خلية','عسلي')"><span class="dot" style="background:#C89B6A"></span> خلية عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="3" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج كرتاش</div><div class="card-top"><div><h3>زجاج كرتاش</h3><p>زجاج كرتاش بزخرفة كلاسيكية أنيقة</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج كرتاش','أبيض')"><span class="dot" style="background:#F5F5F5"></span> كرتاش أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج كرتاش','عسلي')"><span class="dot" style="background:#D2A679"></span> كرتاش عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="4" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img" style="padding:0;display:flex;gap:0"><div style="flex:1;position:relative;overflow:hidden"><img src="p1.jpg.jpg" alt="بلوري أبيض"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">بلوري أبيض</span></div><div style="flex:1;position:relative;overflow:hidden"><img src="p2.jpg.jpg" alt="بلوري عسلي"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">بلوري عسلي</span></div></div><div class="card-top"><div><h3>زجاج بلوري</h3><p>زجاج بلوري للخصوصية الكاملة مع إضاءة طبيعية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج بلوري','أبيض')"><span class="dot" style="background:#EDEDED"></span> بلوري أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بلوري','عسلي')"><span class="dot" style="background:#C9A06A"></span> بلوري عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="5" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img" style="padding:0;position:relative"><img src="tr.jpg.jpg" alt="زجاج مشجر"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">مشجر</span></div><div class="card-top"><div><h3>زجاج سادة ومشجر</h3><p>خيارات كلاسيكية لجميع الاستخدامات</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج','سادة')"><span class="dot" style="background:#D9EAF3"></span> سادة <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج','مشجر')"><span class="dot" style="background:#A8D0A0"></span> مشجر <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+</div>
+<div class="cat-title"><span>المرايا</span></div>
+<div class="grid">
+<div class="card" data-idx="6" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - المرايا</div><div class="card-top"><div><h3>المرايا</h3><p>مرايا بجميع المقاسات والتصاميم العصرية</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'مرايا','عادية')">مرايا عادية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'مرايا','ليد')">مرايا ليد <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'مرايا','استاند')">مرايا استاند <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="7" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - أبواب وواجهات</div><div class="card-top"><div><h3>أبواب وواجهات زجاج</h3><p>أبواب وواجهات وفواصل زجاجية متكاملة</p><span class="badge">6 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','أبواب زجاج')">أبواب زجاج <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','واجهات فريملس')">واجهات فريملس <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','فواصل زجاج')">فواصل زجاج <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','واجهات Curtain Wall')">واجهات Curtain Wall <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','درابزين زجاجي')">درابزين زجاجي <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','شاور')">شاور <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+</div>
+<div class="cat-title"><span>كارتنول — دبل قلاس — فايبر قلاس</span></div>
+<div class="grid">
+<div class="card" data-idx="8" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - أنظمة الواجهات</div><div class="card-top"><div><h3>أنظمة الواجهات والعزل</h3><p>حلول متقدمة للواجهات والعزل الحراري والصوتي</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'أنظمة','كارتنول')">كارتنول <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أنظمة','دبل قلاس')">دبل قلاس — عازل <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أنظمة','فايبر قلاس')">فايبر قلاس <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="9" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - الألمنيوم</div><div class="card-top"><div><h3>الألمنيوم</h3><p>أعمال ألمنيوم متكاملة للأبواب والفواصل والرفوف</p><span class="badge">4 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'ألمنيوم','أبواب مفصلية')">أبواب ألمنيوم مفصلية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','أبواب سحابة')">أبواب ألمنيوم سحابة <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','فواصل بارتشن')">فواصل ألمنيوم بارتشن <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','رفوف')">رفوف ألمنيوم <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+</div>
+<div class="cat-title"><span>الشبابيك</span></div>
+<div class="grid">
+<div class="card" data-idx="10" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - الشبابيك</div><div class="card-top"><div><h3>الشبابيك</h3><p>شبابيك ألمنيوم عملية ومتينة بجميع المقاسات</p><span class="badge">اضغط للعرض</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'شبابيك','مفصلية')">شبابيك ألمنيوم مفصلية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'شبابيك','سحابة')">شبابيك سحابة <span class="check">✓</span></div></div><h4 style="margin-top:14px">اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'شبابيك','بني')"><span class="dot" style="background:#6B3A1F"></span> بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'شبابيك','أبيض')"><span class="dot" style="background:#fff"></span> أبيض <span class="check">✓</span></div></div><p style="font-size:16px;margin-top:10px;color:#9A9A93">نوع الزجاج: عاكس</p><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="11" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - ديكورات</div><div class="card-top"><div><h3>ديكورات وتشطيبات</h3><p>تشطيبات وديكورات عصرية متكاملة</p><span class="badge">8 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'ديكور','بديل رخام')">بديل رخام <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','بديل خشب')">بديل خشب <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','جبص بورد')">جبص بورد <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','سقف مستعار')">سقف مستعار <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','ألواح عرض')">ألواح عرض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','ألواح MDF')">ألواح خشب MDF <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','كلادن')">كلادن <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','صيانة')">صيانة واستبدال <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+</div>
+</section>
+
+<section class="section reveal" id="contact">
+<span class="kicker">تواصل معنا</span>
+<h2>ابدأ رحلتك نحو حياة أكثر رفاهية</h2>
+<div class="divider"></div>
+<p class="sub">أرسل لنا طلبك وسنرد عليك في أسرع وقت.</p>
+<div class="contact-box" style="margin-top:26px">
+<div>
+<h2 style="color:#fff">أرسل طلبك</h2>
+<form onsubmit="submitForm(event,this)">
+<input type="text" placeholder="الاسم" required>
+<input type="tel" placeholder="رقم الهاتف" required>
+<textarea id="orderText" rows="4" placeholder="اكتب طلبك هنا .. مثال: أرغب في واجهة محل"></textarea>
+<button id="submitBtn" type="submit">إرسال الطلب</button>
+</form>
+</div>
+<div>
+<div class="info-item"><b>اتصل بنا</b><br>0123721197</div>
+<div class="info-item"><b>البريد الإلكتروني</b><br>almamarglass@gmail.com</div>
+<a class="whats" href="https://wa.me/249123721197">تواصل عبر واتساب</a>
+</div>
+</div>
+</section>
+<footer><b>المعمار الهندسية</b> <span>|</span> لأعمال الزجاج © 2026 — جميع الحقوق محفوظة<br><span style="font-size:14px">المعمار — حيث تبدأ الفخامة</span></footer>
+
+<div id="adminModal">
+<div class="admin-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3>إدارة المعمار 🔒</h3><button onclick="closeAdmin()" style="background:#222;color:#fff;border:none;width:32px;height:32px;border-radius:50%;font-weight:700">×</button></div>
+<div id="adminLogin">
+<input id="adminPass" type="password" placeholder="اكتب كلمة السر...">
+<button class="abtn" onclick="checkAdminPass()">دخول</button>
+</div>
+<div id="adminControls" style="display:none">
+<button class="abtn" onclick="showChangePass()" style="background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff">تغيير كلمة السر 🔑</button>
+<div id="changePassBox" style="display:none">
+<input id="newPass1" type="password" placeholder="كلمة السر الجديدة">
+<input id="newPass2" type="password" placeholder="أعد كتابة كلمة السر الجديدة">
+<button class="abtn" onclick="saveNewPass()">حفظ كلمة السر الجديدة</button>
+</div>
+<input id="adminSearch" oninput="renderAdmin()" placeholder="ابحث عن خدمة...">
+<div id="adminList" style="margin-top:14px;max-height:45vh;overflow-y:auto"></div>
+<button class="abtn" onclick="closeAdmin()">حفظ وإغلاق ✅</button>
+</div>
+</div>
+</div>
+
+<script>
+setTimeout(()=>{document.getElementById('loader').classList.add('hide')},1600);
+// --- حركة الضغط Ripple ---
+document.addEventListener('click',function(e){
+  let b=e.target.closest('button,.btn,.variant,.open-btn,.order-btn,.whats,nav a');
+  if(!b) return;
+  let r=document.createElement('span'); r.className='ripple';
+  let rect=b.getBoundingClientRect();
+  let size=Math.max(rect.width,rect.height);
+  r.style.width=r.style.height=size+'px';
+  r.style.left=(e.clientX-rect.left-size/2)+'px';
+  r.style.top=(e.clientY-rect.top-size/2)+'px';
+  b.appendChild(r); setTimeout(()=>r.remove(),600);
+});
+// --- ظهور الأقسام عند النزول ---
+let obs=new IntersectionObserver((es)=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// --- تنقل احترافي بين الصفحات ---
+let trans=document.getElementById('pageTrans');
+function goTo(id){
+  trans.classList.add('show');
+  setTimeout(()=>{
+    document.querySelector(id).scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>trans.classList.remove('show'),350);
+  },380);
+}
+document.querySelectorAll('nav a, .hero-btns a, .top a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    let href=this.getAttribute('href');
+    if(!href||!href.startsWith('#')) return;
+    e.preventDefault();
+    document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+    let navLink=document.querySelector('nav a[href="'+href+'"]');
+    if(navLink) navLink.classList.add('active');
+    goTo(href);
+  });
+});
+function getSold(){try{return JSON.parse(localStorage.getItem('almimar_sold')||'[]')}catch(e){return[]}}
+function getPass(){return localStorage.getItem('almimar_pass')||'1234'}
+function isSold(i){return getSold().includes(i)}
+function applySold(){document.querySelectorAll('.card[data-idx]').forEach(c=>{let idx=Number(c.dataset.idx);if(isSold(idx)){c.classList.add('sold')}else{c.classList.remove('sold')}})}
+let tapCount=0,tapTimer=null;
+document.getElementById('secretLogo').addEventListener('click',function(){tapCount++;clearTimeout(tapTimer);tapTimer=setTimeout(()=>tapCount=0,800);if(tapCount>=5){tapCount=0;document.getElementById('adminModal').classList.add('show');document.getElementById('adminLogin').style.display='block';document.getElementById('adminControls').style.display='none';document.getElementById('adminPass').value='';}});
+function closeAdmin(){document.getElementById('adminModal').classList.remove('show')}
+function checkAdminPass(){if(document.getElementById('adminPass').value===getPass()){document.getElementById('adminLogin').style.display='none';document.getElementById('adminControls').style.display='block';document.getElementById('changePassBox').style.display='none';renderAdmin();}else{alert('كلمة السر غلط')}}
+function showChangePass(){let b=document.getElementById('changePassBox');b.style.display=b.style.display==='none'?'block':'none'}
+function saveNewPass(){let a=document.getElementById('newPass1').value,b=document.getElementById('newPass2').value;if(!a){alert('اكتب كلمة السر الجديدة');return}if(a!==b){alert('كلمتا السر ما متطابقات');return}localStorage.setItem('almimar_pass',a);alert('اتغيرت ✅ من هسي الكلمة الجديدة هي الشغالة');document.getElementById('newPass1').value='';document.getElementById('newPass2').value='';document.getElementById('changePassBox').style.display='none'}
+function renderAdmin(){let q=(document.getElementById('adminSearch').value||'').toLowerCase();let list=document.getElementById('adminList');list.innerHTML='';document.querySelectorAll('.card[data-idx]').forEach(c=>{let idx=Number(c.dataset.idx);let name=c.querySelector('h3').innerText;if(q&&!name.toLowerCase().includes(q))return;let sold=isSold(idx);list.innerHTML+=`<div class="admin-row"><div><b>${name}</b></div><button onclick="toggleSold(${idx})" style="background:${sold?'#EF4444':'#25D366'};color:#fff">${sold?'غير متوفر ❌':'متوفر ✅'}</button></div>`});if(!list.innerHTML)list.innerHTML='<p style="text-align:center;color:#888;padding:14px">ما في نتيجة</p>'}
+function toggleSold(i){let sold=getSold();if(sold.includes(i)){sold=sold.filter(x=>x!==i)}else{sold.push(i)}localStorage.setItem('almimar_sold',JSON.stringify(sold));renderAdmin();applySold();}
+function toggleCard(card){let idx=Number(card.dataset.idx);if(isSold(idx)){return}const wasActive=card.classList.contains('active');document.querySelectorAll('.card').forEach(c=>{c.classList.remove('active');const b=c.querySelector('.open-btn');if(b)b.innerText='عرض الأنواع';});if(!wasActive){card.classList.add('active');const btn=card.querySelector('.open-btn');if(btn)btn.innerText='إخفاء الأنواع';}}
+function selectVar(e,el,cat,val){e.stopPropagation();const card=el.closest('.card');if(isSold(Number(card.dataset.idx))){return}card.querySelectorAll('.variant').forEach(v=>v.classList.remove('selected'));el.classList.add('selected');const note=card.querySelector('.selected-note');note.style.display='block';note.innerHTML='تم اختيار: '+cat+' - '+val;const o=document.getElementById('orderText');if(o)o.value='أرغب في: '+cat+' - '+val;}
+function submitForm(e,form){e.preventDefault();const btn=document.getElementById('submitBtn');btn.innerHTML='جاري الإرسال...';btn.disabled=true;setTimeout(()=>{btn.innerHTML='تم إرسال طلبك بنجاح';setTimeout(()=>{btn.innerHTML='إرسال الطلب';btn.disabled=false;form.reset();},2200);},1000);}
+applySold();
+</script>
+</body>
+</html>
