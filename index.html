@@ -26,8 +26,6 @@ button:active,.btn:active,.variant:active,.order-btn:active,.open-btn:active{tra
 .card{animation:cardIn .5s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .img-slot{width:100%;height:auto;min-height:220px;border:none;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:17px;overflow:hidden;padding:12px}
-.img-slot.small{height:170px}
-.img-slot.hero-extra{height:200px;margin-top:18px;background:#111}
 .product-img{width:100%;height:180px;border-bottom:1px dashed rgba(255,138,0,.4);background:#fff;display:flex;align-items:center;justify-content:center;color:#888;font-size:16px;background-size:contain;background-position:center;background-repeat:no-repeat;position:relative;overflow:hidden}
 .product-img img{width:100%;height:100%;object-fit:contain;background:#fff;display:block;position:absolute;inset:0}
 .img-slot img{width:100%;height:auto;max-height:320px;object-fit:contain;display:block;max-width:100%}
@@ -85,7 +83,6 @@ nav a.active{box-shadow:inset 0 -2px 0 #FF8A00}
 .badge{display:inline-block;color:#FF8A00;font-size:15px;margin-top:8px;border:1px solid rgba(255,138,0,.35);padding:3px 12px;border-radius:20px}
 .card-icon{font-size:28px;opacity:.8}
 .open-btn{display:none}
-/* حركة شي إن - الدوائر ظاهرة طوالي تحت المنتج */
 .shein-box{padding:8px 24px 18px;border-top:1px solid rgba(255,255,255,.07)}
 .color-label{color:#FF8A00;font-size:16px;font-weight:700;margin-bottom:8px}
 .color-label b{color:#fff}
@@ -103,7 +100,6 @@ nav a.active{box-shadow:inset 0 -2px 0 #FF8A00}
 .variant.selected{border-color:#FF8A00;background:#FF8A00;color:#0C0C0C;transform:scale(1.03)}
 .variant .check{display:none}.variant.selected .check{display:inline}
 .dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);flex-shrink:0}
-.selected-note{margin-top:14px;color:#FF8A00;font-size:17px;display:none}
 .order-btn{display:block;text-align:center;background:#FF8A00;color:#0C0C0C;padding:12px;border-radius:30px;font-weight:700;margin-top:14px;font-size:18px}
 .order-btn:hover{background:#FF9A2E}
 .shein-order{margin-top:12px;padding:10px;font-size:16px}
@@ -153,10 +149,8 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </style>
 </head>
 <body>
-
 <div id="pageTrans"><span>المعمار • ALMIMAR</span></div>
 <div id="loader"><h1>المعمار</h1><span>ALMIMAR FOR GLASS WORK</span><div class="line"><i></i></div><p>لأعمال الزجاج والألمنيوم</p></div>
-
 <header>
 <div class="top">
 <div class="logo" id="secretLogo">المعمار<span>ALMIMAR FOR GLASS WORK</span></div>
@@ -169,7 +163,6 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <a href="#contact">تواصل معنا</a>
 </nav>
 </header>
-
 <section class="hero" id="home">
 <div class="hero-box">
 <small>المعمار الهندسية — لأعمال الزجاج</small>
@@ -181,15 +174,12 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 </div>
 </section>
-
 <section class="section reveal" id="about">
 <div class="about">
 <span class="kicker">من نحن</span>
 <h2>مجموعتنا الحصرية</h2>
 <div class="divider"></div>
-<div class="img-slot">
-<!-- هنا صورة من نحن - اكتبي اسم الصورة هنا -->
-<img src="2.jpg.jpg" alt="من نحن - المعمار"></div>
+<div class="img-slot"><img src="2.jpg.jpg" alt="من نحن - المعمار"></div>
 <p class="sub" style="margin-top:18px">تقدم شركة المعمار الهندسية حلولاً متكاملة في مجال توريد وتركيب الزجاج بأعلى معايير الجودة والخبرة، بفريق احترافي يلبي متطلبات المشاريع السكنية والتجارية والإدارية الحديثة.</p>
 <div class="why">
 <div><b>جودة عالية</b> في المواد والتنفيذ</div>
@@ -210,7 +200,6 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <div><b>المساحات الداخلية</b><p>فواصل زجاجية أنيقة</p></div>
 </div>
 </section>
-
 <section class="section reveal" id="menu">
 <span class="kicker">القائمة</span>
 <h2>جميع خدماتنا</h2>
@@ -218,31 +207,20 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <p class="sub">اختاري اللون من الدوائر تحت كل منتج، الصورة حتتغير طوالي زي شي إن.</p>
 <div class="cat-title">أنواع <span>الزجاج</span></div>
 <div class="grid">
-
-<!-- زجاج عاكس -->
 <div class="card" data-idx="0"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة العاكس البني - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="ac1.jpg.jpg" alt="زجاج عاكس" onerror="this.style.display='none'"><span>مساحة صورة - زجاج عاكس</span></div>
+<div class="product-img"><img class="prod-img" src="ac1.jpg.jpg" alt="زجاج عاكس" onerror="this.style.display='none'"><span>مساحة صورة - زجاج عاكس</span></div>
 <div class="card-top"><div><h3>زجاج عاكس</h3><p>زجاج عاكس للعزل والخصوصية والمظهر العصري</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">اللون: <b>بني</b></div>
 <div class="shein-dots">
-<!-- هنا صورة العاكس البني -->
 <button class="shein-dot selected" style="background:#6B3A1F" data-img="ac1.jpg.jpg" data-name="بني" onclick="selectShein(event,this,'زجاج عاكس','بني')" aria-label="بني"></button>
-<!-- هنا صورة العاكس الأزرق - اكتبي اسم الصورة هنا -->
 <button class="shein-dot" style="background:#1E6FB8" data-img="ac2.jpg.jpg" data-name="أزرق" onclick="selectShein(event,this,'زجاج عاكس','أزرق')" aria-label="أزرق"></button>
-<!-- هنا صورة العاكس الأخضر - اكتبي اسم الصورة هنا -->
 <button class="shein-dot" style="background:#1E8A4A" data-img="ac3.jpg.jpg" data-name="أخضر" onclick="selectShein(event,this,'زجاج عاكس','أخضر')" aria-label="أخضر"></button>
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
-<!-- زجاج بيرسون -->
 <div class="card" data-idx="1"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة البيرسون البني - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="بيرسون-بني.jpg" alt="زجاج بيرسون" onerror="this.style.display='none'"><span>مساحة صورة - زجاج بيرسون</span></div>
+<div class="product-img"><img class="prod-img" src="pi1.jpg.jpg" alt="زجاج بيرسون" onerror="this.style.display='none'"><span>مساحة صورة - زجاج بيرسون</span></div>
 <div class="card-top"><div><h3>زجاج بيرسون</h3><p>زجاج بيرسون بتشطيب مميز وألوان أنيقة</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">اللون: <b>بني</b></div>
@@ -253,12 +231,8 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
-<!-- زجاج خلية -->
 <div class="card" data-idx="2"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة الخلية الأبيض - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="خلية-ابيض.jpg" alt="زجاج خلية" onerror="this.style.display='none'"><span>مساحة صورة - زجاج خلية</span></div>
+<div class="product-img"><img class="prod-img" src="kh.jpg.jpg" alt="زجاج خلية" onerror="this.style.display='none'"><span>مساحة صورة - زجاج خلية</span></div>
 <div class="card-top"><div><h3>زجاج خلية</h3><p>زجاج خلية بتصميم جميل وخصوصية عالية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">اللون: <b>أبيض</b></div>
@@ -268,12 +242,8 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
-<!-- زجاج كرتاش -->
 <div class="card" data-idx="3"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة الكرتاش الأبيض - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="كرتاش-ابيض.jpg" alt="زجاج كرتاش" onerror="this.style.display='none'"><span>مساحة صورة - زجاج كرتاش</span></div>
+<div class="product-img"><img class="prod-img" src="k1.jpg.jpg" alt="زجاج كرتاش" onerror="this.style.display='none'"><span>مساحة صورة - زجاج كرتاش</span></div>
 <div class="card-top"><div><h3>زجاج كرتاش</h3><p>زجاج كرتاش بزخرفة كلاسيكية أنيقة</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">اللون: <b>أبيض</b></div>
@@ -283,51 +253,33 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
-<!-- زجاج بلوري - الصورة الأصلية عسلي -->
 <div class="card" data-idx="4"><span class="sold-badge">غير متوفر</span>
-<div class="product-img" style="padding:0">
-<!-- هنا الصورة الأصلية بتاعت البلوري هي العسلي - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="p2.jpg.jpg" alt="بلوري عسلي" style="position:absolute;inset:0">
-<span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">بلوري عسلي</span></div>
+<div class="product-img" style="padding:0"><img class="prod-img" src="p2.jpg.jpg" alt="بلوري عسلي" style="position:absolute;inset:0"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">بلوري عسلي</span></div>
 <div class="card-top"><div><h3>زجاج بلوري</h3><p>زجاج بلوري للخصوصية الكاملة مع إضاءة طبيعية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">اللون: <b>عسلي</b></div>
 <div class="shein-dots">
-<!-- هنا صورة البلوري الأبيض - اكتبي اسم الصورة هنا -->
 <button class="shein-dot" style="background:#EDEDED" data-img="p1.jpg.webp" data-name="أبيض" onclick="selectShein(event,this,'زجاج بلوري','أبيض')" aria-label="أبيض"></button>
-<!-- هنا صورة البلوري العسلي - اكتبي اسم الصورة هنا -->
 <button class="shein-dot selected" style="background:#C9A06A" data-img="p2.jpg.jpg" data-name="عسلي" onclick="selectShein(event,this,'زجاج بلوري','عسلي')" aria-label="عسلي"></button>
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
-<!-- زجاج سادة ومشجر -->
 <div class="card" data-idx="5"><span class="sold-badge">غير متوفر</span>
-<div class="product-img" style="padding:0;position:relative">
-<!-- هنا صورة المشجر - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="tr1.jpg.jpg" alt="زجاج مشجر" style="position:absolute;inset:0"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">مشجر</span></div>
+<div class="product-img" style="padding:0;position:relative"><img class="prod-img" src="tr1.jpg.jpg" alt="زجاج مشجر" style="position:absolute;inset:0"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">مشجر</span></div>
 <div class="card-top"><div><h3>زجاج سادة ومشجر</h3><p>خيارات كلاسيكية لجميع الاستخدامات</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>مشجر</b></div>
 <div class="shein-dots">
-<!-- هنا صورة السادة - اكتبي اسم الصورة هنا -->
-<button class="shein-dot" style="background:#D9EAF3" data-img=
-
-"sa.jpg" data-name="سادة" onclick="selectShein(event,this,'زجاج','سادة')" aria-label="سادة"></button>
-<!-- هنا صورة المشجر - اكتبي اسم الصورة هنا -->
+<button class="shein-dot" style="background:#D9EAF3" data-img="sa.jpg" data-name="سادة" onclick="selectShein(event,this,'زجاج','سادة')" aria-label="سادة"></button>
 <button class="shein-dot selected" style="background:#A8D0A0" data-img="tr1.jpg.jpg" data-name="مشجر" onclick="selectShein(event,this,'زجاج','مشجر')" aria-label="مشجر"></button>
 </div>
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
-
 </div>
 <div class="cat-title"><span>المرايا</span></div>
 <div class="grid">
 <div class="card" data-idx="6"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة المرايا العادية - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="مرايا-عادية.jpg" alt="المرايا" onerror="this.style.display='none'"><span>مساحة صورة - المرايا</span></div>
+<div class="product-img"><img class="prod-img" src="mi1.jpg.jpeg" alt="المرايا" onerror="this.style.display='none'"><span>مساحة صورة - المرايا</span></div>
 <div class="card-top"><div><h3>المرايا</h3><p>مرايا بجميع المقاسات والتصاميم العصرية</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>عادية</b></div>
@@ -339,9 +291,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
 <div class="card" data-idx="7"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة أبواب وواجهات - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="ابواب-زجاج.jpg" alt="أبواب وواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أبواب وواجهات</span></div>
+<div class="product-img"><img class="prod-img" src="ابواب-زجاج.jpg" alt="أبواب وواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أبواب وواجهات</span></div>
 <div class="card-top"><div><h3>أبواب وواجهات زجاج</h3><p>أبواب وواجهات وفواصل زجاجية متكاملة</p><span class="badge">6 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>أبواب زجاج</b></div>
@@ -359,9 +309,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <div class="cat-title"><span>كارتنول — دبل قلاس — فايبر قلاس</span></div>
 <div class="grid">
 <div class="card" data-idx="8"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة أنظمة الواجهات - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="كارتنول.jpg" alt="أنظمة الواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أنظمة الواجهات</span></div>
+<div class="product-img"><img class="prod-img" src="cr.jpg.jpg" alt="أنظمة الواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أنظمة الواجهات</span></div>
 <div class="card-top"><div><h3>أنظمة الواجهات والعزل</h3><p>حلول متقدمة للواجهات والعزل الحراري والصوتي</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>كارتنول</b></div>
@@ -373,9 +321,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
 <div class="card" data-idx="9"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة الألمنيوم - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="المنيوم-مفصلية.jpg" alt="الألمنيوم" onerror="this.style.display='none'"><span>مساحة صورة - الألمنيوم</span></div>
+<div class="product-img"><img class="prod-img" src="المنيوم-مفصلية.jpg" alt="الألمنيوم" onerror="this.style.display='none'"><span>مساحة صورة - الألمنيوم</span></div>
 <div class="card-top"><div><h3>الألمنيوم</h3><p>أعمال ألمنيوم متكاملة للأبواب والفواصل والرفوف</p><span class="badge">4 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>أبواب مفصلية</b></div>
@@ -391,9 +337,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <div class="cat-title"><span>الشبابيك</span></div>
 <div class="grid">
 <div class="card" data-idx="10"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة الشبابيك - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="شبابيك-مفصلية.jpg" alt="الشبابيك" onerror="this.style.display='none'"><span>مساحة صورة - الشبابيك</span></div>
+<div class="product-img"><img class="prod-img" src="wi1.jpg.jpg" alt="الشبابيك" onerror="this.style.display='none'"><span>مساحة صورة - الشبابيك</span></div>
 <div class="card-top"><div><h3>الشبابيك</h3><p>شبابيك ألمنيوم عملية ومتينة بجميع المقاسات</p><span class="badge">اضغط للعرض</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>مفصلية</b> - اللون: <b>بني</b></div>
@@ -405,9 +349,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
 </div></div>
 <div class="card" data-idx="11"><span class="sold-badge">غير متوفر</span>
-<div class="product-img">
-<!-- هنا صورة الديكورات - اكتبي اسم الصورة هنا -->
-<img class="prod-img" src="بديل-رخام.jpg" alt="ديكورات" onerror="this.style.display='none'"><span>مساحة صورة - ديكورات</span></div>
+<div class="product-img"><img class="prod-img" src="pd1.jpg.jpg" alt="ديكورات" onerror="this.style.display='none'"><span>مساحة صورة - ديكورات</span></div>
 <div class="card-top"><div><h3>ديكورات وتشطيبات</h3><p>تشطيبات وديكورات عصرية متكاملة</p><span class="badge">8 أنواع</span></div><div class="card-icon">—</div></div>
 <div class="shein-box">
 <div class="color-label">النوع: <b>بديل رخام</b></div>
@@ -425,7 +367,6 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div></div>
 </div>
 </section>
-
 <section class="section reveal" id="contact">
 <span class="kicker">تواصل معنا</span>
 <h2>ابدأ رحلتك نحو حياة أكثر رفاهية</h2>
@@ -449,7 +390,6 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 </section>
 <footer><b>المعمار الهندسية</b> <span>|</span> لأعمال الزجاج © 2026 — جميع الحقوق محفوظة<br><span style="font-size:14px">المعمار — حيث تبدأ الفخامة</span></footer>
-
 <div id="adminModal">
 <div class="admin-box">
 <div style="display:flex;justify-content:space-between;align-items:center"><h3>إدارة المعمار 🔒</h3><button onclick="closeAdmin()" style="background:#222;color:#fff;border:none;width:32px;height:32px;border-radius:50%;font-weight:700">×</button></div>
@@ -470,7 +410,6 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 </div>
 </div>
 </div>
-
 <script>
 setTimeout(()=>{document.getElementById('loader').classList.add('hide')},1600);
 document.addEventListener('click',function(e){
