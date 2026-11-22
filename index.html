@@ -17,7 +17,7 @@ button:active,.btn:active,.variant:active,.order-btn:active,.open-btn:active{tra
 .btn-gold2 .ripple,.order-btn .ripple{background:rgba(0,0,0,.18)}
 #pageTrans{position:fixed;inset:0;background:#0C0C0C;z-index:9998;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
 #pageTrans.show{opacity:1;pointer-events:auto}
-#pageTrans span{color:#FF7A00;font-size:30px;letter-spacing:3px;animation:pulse .8s ease infinite}
+#pageTrans span{color:#FF8A00;font-size:30px;letter-spacing:3px;animation:pulse .8s ease infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(.96)}50%{opacity:1;transform:scale(1)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -25,139 +25,131 @@ button:active,.btn:active,.variant:active,.order-btn:active,.open-btn:active{tra
 @keyframes heroIn{from{opacity:0;transform:translateY(30px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 .card{animation:cardIn .5s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-/* --- كل الصور مرنة على حسب الجهاز --- */
 .img-slot{width:100%;height:auto;min-height:220px;border:none;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:17px;overflow:hidden;padding:12px}
 .img-slot.small{height:170px}
 .img-slot.hero-extra{height:200px;margin-top:18px;background:#111}
-.product-img{width:100%;height:180px;border-bottom:1px dashed rgba(255,122,0,.4);background:#fff;display:flex;align-items:center;justify-content:center;color:#888;font-size:16px;background-size:cover;background-position:center;background-repeat:no-repeat}
-.product-img img{width:100%;height:100%;object-fit:cover;background:#fff;display:block;max-width:100%}
-.img-slot img{width:100%;height:auto;max-width:100%;max-height:100%;object-fit:cover;display:block;border-radius:12px}
+.product-img{width:100%;height:180px;border-bottom:1px dashed rgba(255,138,0,.4);background:#fff;display:flex;align-items:center;justify-content:center;color:#888;font-size:16px;background-size:contain;background-position:center;background-repeat:no-repeat;position:relative;overflow:hidden}
+.product-img img{width:100%;height:100%;object-fit:contain;background:#fff;display:block;position:absolute;inset:0}
+.img-slot img{width:100%;height:auto;max-height:320px;object-fit:contain;display:block;max-width:100%}
 img{max-width:100%;height:auto}
 #loader{position:fixed;inset:0;background:#0C0C0C;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .9s ease}
 #loader.hide{opacity:0;pointer-events:none}
 #loader h1{font-size:52px;font-weight:400;letter-spacing:4px;color:#fff}
-#loader span{color:#FF7A00;letter-spacing:6px;font-size:13px;margin-top:4px}
+#loader span{color:#FF8A00;letter-spacing:6px;font-size:13px;margin-top:4px}
 #loader .line{width:110px;height:1px;background:#2A2A2A;margin:22px 0;position:relative;overflow:hidden}
-#loader .line i{position:absolute;inset:0;background:#FF7A00;transform-origin:right;animation:load 1.4s ease forwards}
+#loader .line i{position:absolute;inset:0;background:#FF8A00;transform-origin:right;animation:load 1.4s ease forwards}
 @keyframes load{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 #loader p{font-size:14px;color:#777}
 header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 6% 14px;background:rgba(12,12,12,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
 .top{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:30px;font-weight:700;line-height:1.1;cursor:pointer;user-select:none}.logo span{display:block;font-size:11px;letter-spacing:4px;color:#FF7A00;font-weight:400}
+.logo{font-size:30px;font-weight:700;line-height:1.1;cursor:pointer;user-select:none}.logo span{display:block;font-size:11px;letter-spacing:4px;color:#FF8A00;font-weight:400}
 nav{display:flex;gap:4px;margin-top:14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
 nav a{padding:7px 16px;border-radius:30px;font-size:17px;color:#CFCFC8;flex-shrink:0}
 nav a:hover,nav a.active{color:#fff;background:rgba(255,255,255,.07)}
-nav a.active{box-shadow:inset 0 -2px 0 #FF7A00}
-.btn-gold{background:#FF7A00!important;color:#0C0C0C!important;font-weight:700!important}
-.hero{min-height:92vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:130px 6% 55px;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.35) 55%,rgba(12,12,12,.97) 98%),url('1.jpg.jpg') center top/cover no-repeat;background-size:cover}
-.hero-box{max-width:720px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:28px 22px;border-radius:20px;width:100%}
-.hero small{color:#FF7A00;letter-spacing:4px;font-size:15px}
+nav a.active{box-shadow:inset 0 -2px 0 #FF8A00}
+.btn-gold{background:#FF8A00!important;color:#0C0C0C!important;font-weight:700!important}
+.hero{min-height:92vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:130px 6% 55px;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.35) 55%,rgba(12,12,12,.97) 98%),url('1.jpg.jpg') center top/cover no-repeat}
+.hero-box{max-width:720px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:28px 22px;border-radius:20px}
+.hero small{color:#FF8A00;letter-spacing:4px;font-size:15px}
 .hero h1{font-size:58px;line-height:1.25;margin:12px 0;font-weight:400}
 .hero p{color:#D8D8D2;font-size:20px;max-width:620px;margin:auto}
 .hero-btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn{padding:13px 34px;border-radius:40px;font-weight:700;font-size:18px;display:inline-block;border:1px solid transparent}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.35)}
-.btn-gold2{background:#FF7A00;color:#0C0C0C}
-.btn-gold2:hover{background:#FF9A3D}
+.btn-gold2{background:#FF8A00;color:#0C0C0C}
+.btn-gold2:hover{background:#FF9A2E}
 .btn-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
 .btn-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 .section{padding:80px 6%;max-width:1150px;margin:auto}
-.kicker{color:#FF7A00;letter-spacing:3px;font-size:15px}
+.kicker{color:#FF8A00;letter-spacing:3px;font-size:15px}
 .section h2{font-size:38px;line-height:1.4;margin:10px 0;font-weight:400}
 .section .sub{color:#9A9A93;max-width:680px;font-size:19px}
-.divider{width:48px;height:1px;background:#FF7A00;margin:18px 0}
+.divider{width:48px;height:1px;background:#FF8A00;margin:18px 0}
 .about{background:#121212;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:38px}
 .why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
 .why div{background:#161616;border:1px solid rgba(255,255,255,.05);padding:20px;border-radius:14px;font-size:18px}
 .why div b{color:#EDEDE8;display:block;font-size:19px;font-weight:700}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px;text-align:center}
 .stats div{background:#121212;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px}
-.stats b{font-size:26px;color:#FF7A00;display:block;font-weight:400}.stats span{font-size:15px;color:#888}
+.stats b{font-size:26px;color:#FF8A00;display:block;font-weight:400}.stats span{font-size:15px;color:#888}
 .cat-title{font-size:24px;font-weight:700;margin:52px 0 18px;padding:0 0 12px;border-bottom:1px solid rgba(255,255,255,.08)}
-.cat-title span{color:#FF7A00}
-/* --- الشبكة: تلفون 2 في الصف --- */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
-@media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.cat-title span{color:#FF8A00}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
 .card{background:#131313;border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;cursor:pointer;transition:.3s;position:relative}
-.card:hover{border-color:rgba(255,122,0,.5);transform:translateY(-3px)}
-.card.active{border-color:#FF7A00}
-.card-top{padding:24px;display:flex;justify-content:space-between;gap:12px}
+.card:hover{border-color:rgba(255,138,0,.5);transform:translateY(-3px)}
+.card.active{border-color:#FF8A00}
+.card-top{padding:24px 24px 8px;display:flex;justify-content:space-between;gap:12px}
 .card-top h3{color:#fff;font-size:25px;font-weight:700}.card-top p{color:#9A9A93;font-size:17px}
-.badge{display:inline-block;color:#FF7A00;font-size:15px;margin-top:8px;border:1px solid rgba(255,122,0,.35);padding:3px 12px;border-radius:20px}
+.badge{display:inline-block;color:#FF8A00;font-size:15px;margin-top:8px;border:1px solid rgba(255,138,0,.35);padding:3px 12px;border-radius:20px}
 .card-icon{font-size:28px;opacity:.8}
-.open-btn{background:transparent;color:#EDEDE8;border:1px solid rgba(255,255,255,.25);padding:9px 20px;border-radius:30px;font-weight:700;font-size:16px;margin:0 24px 20px}
-.card.active .open-btn{background:#FF7A00;color:#0C0C0C;border-color:#FF7A00}
-.details{display:none;background:#0C0C0C;border-top:1px solid rgba(255,255,255,.07);padding:22px}
+.open-btn{display:none}
+/* حركة شي إن - الدوائر ظاهرة طوالي تحت المنتج */
+.shein-box{padding:8px 24px 18px;border-top:1px solid rgba(255,255,255,.07)}
+.color-label{color:#FF8A00;font-size:16px;font-weight:700;margin-bottom:8px}
+.color-label b{color:#fff}
+.shein-dots{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.shein-dot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.35);cursor:pointer;padding:0;flex-shrink:0;background:#333}
+.shein-dot.selected{border-color:#FF8A00;outline:2px solid #FF8A00;outline-offset:2px;transform:scale(1.12)}
+.shein-dot:active{transform:scale(.92)}
+.details{display:none}
 .card.active .details{display:block;animation:detailIn .4s ease both}
 @keyframes detailIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.details h4{margin-bottom:12px;color:#FF7A00;font-size:19px;font-weight:700}
-/* --- حركة شي إن: صور + وصف جوه المنتج --- */
-.shein-gallery{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
-.shein-gallery .sg-main{flex:1;min-width:140px;aspect-ratio:1/1;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#888;font-size:14px;text-align:center;padding:8px}
-.shein-gallery .sg-main img{width:100%;height:100%;object-fit:cover;border-radius:12px}
-.shein-gallery .sg-thumbs{display:flex;flex-direction:column;gap:8px}
-.shein-gallery .sg-thumbs span{width:64px;height:64px;background:#1a1a1a;border:1px solid rgba(255,122,0,.4);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#aaa;text-align:center;overflow:hidden}
-.shein-gallery .sg-thumbs span img{width:100%;height:100%;object-fit:cover}
-.prod-desc{background:#161616;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px;font-size:16px;line-height:1.8;color:#D8D8D2;margin-bottom:14px}
-.prod-desc b{color:#fff;display:block;margin-bottom:4px}
-.prod-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.prod-specs span{background:#1c1c1c;border:1px solid rgba(255,255,255,.1);padding:5px 12px;border-radius:20px;font-size:14px;color:#ccc}
+.details h4{margin-bottom:12px;color:#FF8A00;font-size:19px;font-weight:700}
 .variants{display:flex;flex-wrap:wrap;gap:9px}
 .variant{border:1px solid rgba(255,255,255,.14);background:#161616;color:#EDEDE8;padding:11px 16px;border-radius:30px;display:flex;gap:8px;align-items:center;font-weight:700;font-size:17px}
-.variant:hover{border-color:#FF7A00;transform:translateY(-1px)}
-.variant.selected{border-color:#FF7A00;background:#FF7A00;color:#0C0C0C;transform:scale(1.03)}
+.variant:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.variant.selected{border-color:#FF8A00;background:#FF8A00;color:#0C0C0C;transform:scale(1.03)}
 .variant .check{display:none}.variant.selected .check{display:inline}
 .dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.4);flex-shrink:0}
-.selected-note{margin-top:14px;color:#FF7A00;font-size:17px;display:none}
-.order-btn{display:block;text-align:center;background:#FF7A00;color:#0C0C0C;padding:12px;border-radius:30px;font-weight:700;margin-top:14px;font-size:18px}
-.order-btn:hover{background:#FF9A3D}
-.luxury{margin:24px 0;border-radius:20px;min-height:340px;display:flex;align-items:center;padding:38px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('1.jpg.jpg') center/cover;background-size:cover}
+.selected-note{margin-top:14px;color:#FF8A00;font-size:17px;display:none}
+.order-btn{display:block;text-align:center;background:#FF8A00;color:#0C0C0C;padding:12px;border-radius:30px;font-weight:700;margin-top:14px;font-size:18px}
+.order-btn:hover{background:#FF9A2E}
+.shein-order{margin-top:12px;padding:10px;font-size:16px}
+.luxury{margin:24px 0;border-radius:20px;min-height:340px;display:flex;align-items:center;padding:38px;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('1.jpg.jpg') center/cover}
 .luxury h2{font-size:34px}.luxury p{color:#D8D8D2;max-width:520px;font-size:19px}
 .features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
 .features div{background:#131313;border:1px solid rgba(255,255,255,.07);padding:22px;border-radius:16px;text-align:center}
 .features div b{color:#fff;display:block;font-size:20px}.features div p{font-size:16px;color:#9A9A93}
 .contact-box{background:#121212;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
 .contact-box input,.contact-box textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0C0C0C;color:#fff;margin-bottom:12px;font-size:17px}
-.contact-box input:focus,.contact-box textarea:focus{outline:none;border-color:#FF7A00}
-.contact-box button{background:#FF7A00;color:#0C0C0C;border:none;padding:14px;border-radius:30px;width:100%;font-weight:700;font-size:19px}
-.contact-box button:hover{background:#FF9A3D}
-.info-item{background:#161616;padding:16px;border-radius:14px;margin-bottom:12px;font-size:18px}.info-item b{color:#FF7A00}
+.contact-box input:focus,.contact-box textarea:focus{outline:none;border-color:#FF8A00}
+.contact-box button{background:#FF8A00;color:#0C0C0C;border:none;padding:14px;border-radius:30px;width:100%;font-weight:700;font-size:19px}
+.contact-box button:hover{background:#FF9A2E}
+.info-item{background:#161616;padding:16px;border-radius:14px;margin-bottom:12px;font-size:18px}.info-item b{color:#FF8A00}
 .whats{display:block;text-align:center;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25);padding:13px;border-radius:30px;font-weight:700;margin-top:10px;font-size:18px}
 .whats:hover{border-color:#fff;background:rgba(255,255,255,.05)}
-footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1px solid rgba(255,255,255,.06);font-size:16px}footer b{color:#EDEDE8}footer span{color:#FF7A00}
+footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1px solid rgba(255,255,255,.06);font-size:16px}footer b{color:#EDEDE8}footer span{color:#FF8A00}
 .card.sold{opacity:.55;filter:grayscale(.6)}
 .sold-badge{position:absolute;top:10px;left:10px;background:#EF4444;color:#fff;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;z-index:5;display:none}
 .card.sold .sold-badge{display:block}
 #adminModal{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
 #adminModal.show{display:flex}
-.admin-box{background:#161616;width:100%;max-width:430px;border-radius:20px;padding:22px;border:1px solid rgba(255,122,0,.4);margin-top:20px}
+.admin-box{background:#161616;width:100%;max-width:430px;border-radius:20px;padding:22px;border:1px solid rgba(255,138,0,.4);margin-top:20px}
 .admin-box h3{color:#fff;font-size:24px}
 .admin-box input{width:100%;padding:13px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:#0C0C0C;color:#fff;margin-top:12px;font-size:17px}
-.admin-box .abtn{background:#FF7A00;color:#0C0C0C;border:none;padding:13px;border-radius:30px;width:100%;font-weight:700;font-size:18px;margin-top:12px}
+.admin-box .abtn{background:#FF8A00;color:#0C0C0C;border:none;padding:13px;border-radius:30px;width:100%;font-weight:700;font-size:18px;margin-top:12px}
 .admin-row{background:#0C0C0C;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .admin-row b{color:#fff;font-size:17px}
 .admin-row button{border:none;padding:8px 14px;border-radius:20px;font-weight:700;white-space:nowrap}
 @media(max-width:800px){.hero h1{font-size:38px}.hero{min-height:92vh}.why,.contact-box,.stats{grid-template-columns:1fr}.features{grid-template-columns:1fr}.section h2{font-size:30px}.luxury{padding:26px}}
 @media(max-width:767px){
 .section{padding:60px 3%}
-.grid{gap:8px}
-.product-img{height:110px;font-size:13px}
-.card-top{padding:12px}
+.grid{gap:8px;grid-template-columns:repeat(2,1fr)}
+.product-img{height:150px;font-size:13px}
+.card-top{padding:12px 12px 4px}
 .card-top h3{font-size:18px;line-height:1.3}
 .card-top p{font-size:13px;line-height:1.5}
 .badge{font-size:12px;padding:2px 8px}
-.open-btn{margin:0 12px 12px;padding:7px 10px;font-size:13px;width:calc(100% - 24px)}
+.open-btn{display:none}
 .card-icon{display:none}
 .details{padding:14px}
-.shein-gallery .sg-thumbs span{width:52px;height:52px}
-.img-slot{min-height:180px}
-.hero{padding:120px 4% 40px;background-position:center center}
+.shein-box{padding:6px 12px 12px}
+.shein-dot{width:24px;height:24px}
+.color-label{font-size:14px}
+.shein-order{padding:8px;font-size:14px}
 }
-/* --- صورة الرئيسية ومن نحن تتظبط على حسب الجهاز --- */
-@media(max-width:480px){.hero{min-height:78vh}.img-slot img{max-height:240px}.luxury{min-height:280px}}
-@media(min-width:1024px){.img-slot img{max-height:420px}.hero{min-height:92vh}}
 </style>
 </head>
 <body>
@@ -195,7 +187,9 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <span class="kicker">من نحن</span>
 <h2>مجموعتنا الحصرية</h2>
 <div class="divider"></div>
-<div class="img-slot"><img src="2.jpg.jpg" alt="من نحن - المعمار"></div>
+<div class="img-slot">
+<!-- هنا صورة من نحن - اكتبي اسم الصورة هنا -->
+<img src="2.jpg.jpg" alt="من نحن - المعمار"></div>
 <p class="sub" style="margin-top:18px">تقدم شركة المعمار الهندسية حلولاً متكاملة في مجال توريد وتركيب الزجاج بأعلى معايير الجودة والخبرة، بفريق احترافي يلبي متطلبات المشاريع السكنية والتجارية والإدارية الحديثة.</p>
 <div class="why">
 <div><b>جودة عالية</b> في المواد والتنفيذ</div>
@@ -221,30 +215,214 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <span class="kicker">القائمة</span>
 <h2>جميع خدماتنا</h2>
 <div class="divider"></div>
-<p class="sub">اضغط على أي خدمة لعرض صورها ووصفها وأنواعها، ثم اختر النوع المناسب واطلب الخدمة.</p>
+<p class="sub">اختاري اللون من الدوائر تحت كل منتج، الصورة حتتغير طوالي زي شي إن.</p>
 <div class="cat-title">أنواع <span>الزجاج</span></div>
 <div class="grid">
-<div class="card" data-idx="0" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج عاكس</div><div class="card-top"><div><h3>زجاج عاكس</h3><p>زجاج عاكس للعزل والخصوصية والمظهر العصري</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - زجاج عاكس</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>زجاج عاكس للعزل والخصوصية والمظهر العصري. يعكس أشعة الشمس ويقلل الحرارة ويحافظ على خصوصيتك نهاراً.</div><div class="prod-specs"><span>عازل حرارة</span><span>خصوصية عالية</span><span>مظهر عصري</span></div><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','بني')"><span class="dot" style="background:#6B3A1F"></span> عاكس بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','أزرق')"><span class="dot" style="background:#1E6FB8"></span> عاكس أزرق <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج عاكس','أخضر')"><span class="dot" style="background:#1E8A4A"></span> عاكس أخضر <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="1" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج بيرسون</div><div class="card-top"><div><h3>زجاج بيرسون</h3><p>زجاج بيرسون بتشطيب مميز وألوان أنيقة</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - زجاج بيرسون</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>زجاج بيرسون بتشطيب مميز وألوان أنيقة، مناسب للواجهات والشبابيك والديكور الداخلي.</div><div class="prod-specs"><span>تشطيب مميز</span><span>ألوان أنيقة</span></div><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','بني')"><span class="dot" style="background:#7A4A2B"></span> بيرسون بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','أخضر')"><span class="dot" style="background:#2E9E5B"></span> بيرسون أخضر <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بيرسون','أزرق')"><span class="dot" style="background:#2A7FD4"></span> بيرسون أزرق <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="2" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج خلية</div><div class="card-top"><div><h3>زجاج خلية</h3><p>زجاج خلية بتصميم جميل وخصوصية عالية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - زجاج خلية</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>زجاج خلية بتصميم جميل وخصوصية عالية، يسمح بدخول الضوء مع حجب الرؤية.</div><div class="prod-specs"><span>خصوصية عالية</span><span>إضاءة طبيعية</span></div><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج خلية','أبيض')"><span class="dot" style="background:#fff"></span> خلية أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج خلية','عسلي')"><span class="dot" style="background:#C89B6A"></span> خلية عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="3" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - زجاج كرتاش</div><div class="card-top"><div><h3>زجاج كرتاش</h3><p>زجاج كرتاش بزخرفة كلاسيكية أنيقة</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - زجاج كرتاش</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>زجاج كرتاش بزخرفة كلاسيكية أنيقة، يضيف لمسة فخامة للأبواب والشبابيك.</div><div class="prod-specs"><span>زخرفة كلاسيكية</span><span>فخامة</span></div><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج كرتاش','أبيض')"><span class="dot" style="background:#F5F5F5"></span> كرتاش أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج كرتاش','عسلي')"><span class="dot" style="background:#D2A679"></span> كرتاش عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="4" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img" style="padding:0;display:flex;gap:0"><div style="flex:1;position:relative;overflow:hidden"><img src="file:///C:/Users/TG/Desktop/%D8%A7%D9%84%D9%85%D8%B9%D9%85%D8%A7%D8%B1/p1.jpg.webp" alt="بلوري أبيض"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">بلوري أبيض</span></div><div style="flex:1;position:relative;overflow:hidden"><img src="p2.jpg.jpg" alt="بلوري عسلي"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">بلوري عسلي</span></div></div><div class="card-top"><div><h3>زجاج بلوري</h3><p>زجاج بلوري للخصوصية الكاملة مع إضاءة طبيعية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main"><img src="p2.jpg.jpg" alt="بلوري"></div><div class="sg-thumbs"><span><img src="p2.jpg.jpg"></span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>زجاج بلوري للخصوصية الكاملة مع إضاءة طبيعية، مثالي للحمامات والمكاتب.</div><div class="prod-specs"><span>خصوصية كاملة</span><span>إضاءة طبيعية</span></div><h4>اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج بلوري','أبيض')"><span class="dot" style="background:#EDEDED"></span> بلوري أبيض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج بلوري','عسلي')"><span class="dot" style="background:#C9A06A"></span> بلوري عسلي <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="5" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img" style="padding:0;position:relative"><img src="tr.jpg.jpg" alt="زجاج مشجر"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px">مشجر</span></div><div class="card-top"><div><h3>زجاج سادة ومشجر</h3><p>خيارات كلاسيكية لجميع الاستخدامات</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main"><img src="tr.jpg.jpg" alt="مشجر"></div><div class="sg-thumbs"><span><img src="tr.jpg.jpg"></span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>خيارات كلاسيكية لجميع الاستخدامات، سادة للوضوح ومشجر للديكور والخصوصية.</div><div class="prod-specs"><span>كلاسيكي</span><span>جميع الاستخدامات</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'زجاج','سادة')"><span class="dot" style="background:#D9EAF3"></span> سادة <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'زجاج','مشجر')"><span class="dot" style="background:#A8D0A0"></span> مشجر <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+
+<!-- زجاج عاكس -->
+<div class="card" data-idx="0"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة العاكس البني - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="ac1.jpg.jpg" alt="زجاج عاكس" onerror="this.style.display='none'"><span>مساحة صورة - زجاج عاكس</span></div>
+<div class="card-top"><div><h3>زجاج عاكس</h3><p>زجاج عاكس للعزل والخصوصية والمظهر العصري</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">اللون: <b>بني</b></div>
+<div class="shein-dots">
+<!-- هنا صورة العاكس البني -->
+<button class="shein-dot selected" style="background:#6B3A1F" data-img="ac1.jpg.jpg" data-name="بني" onclick="selectShein(event,this,'زجاج عاكس','بني')" aria-label="بني"></button>
+<!-- هنا صورة العاكس الأزرق - اكتبي اسم الصورة هنا -->
+<button class="shein-dot" style="background:#1E6FB8" data-img="ac2.jpg.jpg" data-name="أزرق" onclick="selectShein(event,this,'زجاج عاكس','أزرق')" aria-label="أزرق"></button>
+<!-- هنا صورة العاكس الأخضر - اكتبي اسم الصورة هنا -->
+<button class="shein-dot" style="background:#1E8A4A" data-img="ac3.jpg.jpg" data-name="أخضر" onclick="selectShein(event,this,'زجاج عاكس','أخضر')" aria-label="أخضر"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
+<!-- زجاج بيرسون -->
+<div class="card" data-idx="1"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة البيرسون البني - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="بيرسون-بني.jpg" alt="زجاج بيرسون" onerror="this.style.display='none'"><span>مساحة صورة - زجاج بيرسون</span></div>
+<div class="card-top"><div><h3>زجاج بيرسون</h3><p>زجاج بيرسون بتشطيب مميز وألوان أنيقة</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">اللون: <b>بني</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#7A4A2B" data-img="pi1.jpg.jpg" data-name="بني" onclick="selectShein(event,this,'زجاج بيرسون','بني')" aria-label="بني"></button>
+<button class="shein-dot" style="background:#2E9E5B" data-img="pi2.jpg.jpg" data-name="أخضر" onclick="selectShein(event,this,'زجاج بيرسون','أخضر')" aria-label="أخضر"></button>
+<button class="shein-dot" style="background:#2A7FD4" data-img="pi3.jpg.jpg" data-name="أزرق" onclick="selectShein(event,this,'زجاج بيرسون','أزرق')" aria-label="أزرق"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
+<!-- زجاج خلية -->
+<div class="card" data-idx="2"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة الخلية الأبيض - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="خلية-ابيض.jpg" alt="زجاج خلية" onerror="this.style.display='none'"><span>مساحة صورة - زجاج خلية</span></div>
+<div class="card-top"><div><h3>زجاج خلية</h3><p>زجاج خلية بتصميم جميل وخصوصية عالية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">اللون: <b>أبيض</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#fff" data-img="kh.jpg.jpg" data-name="أبيض" onclick="selectShein(event,this,'زجاج خلية','أبيض')" aria-label="أبيض"></button>
+<button class="shein-dot" style="background:#C89B6A" data-img="file:///C:/Users/TG/Desktop/%D8%A7%D9%84%D9%85%D8%B9%D9%85%D8%A7%D8%B1/kh1.jpg.webp" data-name="عسلي" onclick="selectShein(event,this,'زجاج خلية','عسلي')" aria-label="عسلي"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
+<!-- زجاج كرتاش -->
+<div class="card" data-idx="3"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة الكرتاش الأبيض - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="كرتاش-ابيض.jpg" alt="زجاج كرتاش" onerror="this.style.display='none'"><span>مساحة صورة - زجاج كرتاش</span></div>
+<div class="card-top"><div><h3>زجاج كرتاش</h3><p>زجاج كرتاش بزخرفة كلاسيكية أنيقة</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">اللون: <b>أبيض</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#F5F5F5" data-img="k1.jpg.jpg" data-name="أبيض" onclick="selectShein(event,this,'زجاج كرتاش','أبيض')" aria-label="أبيض"></button>
+<button class="shein-dot" style="background:#D2A679" data-img="k2.jpg.jpg" data-name="عسلي" onclick="selectShein(event,this,'زجاج كرتاش','عسلي')" aria-label="عسلي"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
+<!-- زجاج بلوري - الصورة الأصلية عسلي -->
+<div class="card" data-idx="4"><span class="sold-badge">غير متوفر</span>
+<div class="product-img" style="padding:0">
+<!-- هنا الصورة الأصلية بتاعت البلوري هي العسلي - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="p2.jpg.jpg" alt="بلوري عسلي" style="position:absolute;inset:0">
+<span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">بلوري عسلي</span></div>
+<div class="card-top"><div><h3>زجاج بلوري</h3><p>زجاج بلوري للخصوصية الكاملة مع إضاءة طبيعية</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">اللون: <b>عسلي</b></div>
+<div class="shein-dots">
+<!-- هنا صورة البلوري الأبيض - اكتبي اسم الصورة هنا -->
+<button class="shein-dot" style="background:#EDEDED" data-img="p1.jpg.webp" data-name="أبيض" onclick="selectShein(event,this,'زجاج بلوري','أبيض')" aria-label="أبيض"></button>
+<!-- هنا صورة البلوري العسلي - اكتبي اسم الصورة هنا -->
+<button class="shein-dot selected" style="background:#C9A06A" data-img="p2.jpg.jpg" data-name="عسلي" onclick="selectShein(event,this,'زجاج بلوري','عسلي')" aria-label="عسلي"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
+<!-- زجاج سادة ومشجر -->
+<div class="card" data-idx="5"><span class="sold-badge">غير متوفر</span>
+<div class="product-img" style="padding:0;position:relative">
+<!-- هنا صورة المشجر - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="tr1.jpg.jpg" alt="زجاج مشجر" style="position:absolute;inset:0"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;padding:2px 10px;border-radius:20px;font-size:13px;z-index:2">مشجر</span></div>
+<div class="card-top"><div><h3>زجاج سادة ومشجر</h3><p>خيارات كلاسيكية لجميع الاستخدامات</p><span class="badge">2 نوع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>مشجر</b></div>
+<div class="shein-dots">
+<!-- هنا صورة السادة - اكتبي اسم الصورة هنا -->
+<button class="shein-dot" style="background:#D9EAF3" data-img=
+
+"file:///C:/Users/TG/Desktop/%D8%A7%D9%84%D9%85%D8%B9%D9%85%D8%A7%D8%B1/sa.jpg.webp" data-name="سادة" onclick="selectShein(event,this,'زجاج','سادة')" aria-label="سادة"></button>
+<!-- هنا صورة المشجر - اكتبي اسم الصورة هنا -->
+<button class="shein-dot selected" style="background:#A8D0A0" data-img="tr1.jpg.jpg" data-name="مشجر" onclick="selectShein(event,this,'زجاج','مشجر')" aria-label="مشجر"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+
 </div>
 <div class="cat-title"><span>المرايا</span></div>
 <div class="grid">
-<div class="card" data-idx="6" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - المرايا</div><div class="card-top"><div><h3>المرايا</h3><p>مرايا بجميع المقاسات والتصاميم العصرية</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - المرايا</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>مرايا بجميع المقاسات والتصاميم العصرية، عادية وليد واستاند.</div><div class="prod-specs"><span>جميع المقاسات</span><span>تصاميم عصرية</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'مرايا','عادية')">مرايا عادية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'مرايا','ليد')">مرايا ليد <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'مرايا','استاند')">مرايا استاند <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="7" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - أبواب وواجهات</div><div class="card-top"><div><h3>أبواب وواجهات زجاج</h3><p>أبواب وواجهات وفواصل زجاجية متكاملة</p><span class="badge">6 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - أبواب وواجهات</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>أبواب وواجهات وفواصل زجاجية متكاملة للمحلات والمنازل والمكاتب.</div><div class="prod-specs"><span>متكاملة</span><span>فخامة</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','أبواب زجاج')">أبواب زجاج <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','واجهات فريملس')">واجهات فريملس <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','فواصل زجاج')">فواصل زجاج <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','واجهات Curtain Wall')">واجهات Curtain Wall <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','درابزين زجاجي')">درابزين زجاجي <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أبواب وواجهات','شاور')">شاور <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="6"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة المرايا العادية - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="مرايا-عادية.jpg" alt="المرايا" onerror="this.style.display='none'"><span>مساحة صورة - المرايا</span></div>
+<div class="card-top"><div><h3>المرايا</h3><p>مرايا بجميع المقاسات والتصاميم العصرية</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>عادية</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#D9D9D9" data-img="mi1.jpg.jpeg" data-name="عادية" onclick="selectShein(event,this,'مرايا','عادية')" aria-label="عادية"></button>
+<button class="shein-dot" style="background:#FFD966" data-img="mi2.jpg.jpg" data-name="ليد" onclick="selectShein(event,this,'مرايا','ليد')" aria-label="ليد"></button>
+<button class="shein-dot" style="background:#8A8A8A" data-img="st.jpg.jpg" data-name="استاند" onclick="selectShein(event,this,'مرايا','استاند')" aria-label="استاند"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+<div class="card" data-idx="7"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة أبواب وواجهات - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="ابواب-زجاج.jpg" alt="أبواب وواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أبواب وواجهات</span></div>
+<div class="card-top"><div><h3>أبواب وواجهات زجاج</h3><p>أبواب وواجهات وفواصل زجاجية متكاملة</p><span class="badge">6 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>أبواب زجاج</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#B9975B" data-img="ابواب-زجاج.jpg" data-name="أبواب زجاج" onclick="selectShein(event,this,'أبواب وواجهات','أبواب زجاج')" aria-label="أبواب زجاج"></button>
+<button class="shein-dot" style="background:#888" data-img="واجهات-فريملس.jpg" data-name="واجهات فريملس" onclick="selectShein(event,this,'أبواب وواجهات','واجهات فريملس')" aria-label="واجهات فريملس"></button>
+<button class="shein-dot" style="background:#AAA" data-img="f.jpg.jpg" data-name="فواصل زجاج" onclick="selectShein(event,this,'أبواب وواجهات','فواصل زجاج')" aria-label="فواصل زجاج"></button>
+<button class="shein-dot" style="background:#555" data-img="كيرتن-وول.jpg" data-name="واجهات Curtain Wall" onclick="selectShein(event,this,'أبواب وواجهات','واجهات Curtain Wall')" aria-label="واجهات Curtain Wall"></button>
+<button class="shein-dot" style="background:#CCC" data-img="درابزين.jpg" data-name="درابزين زجاجي" onclick="selectShein(event,this,'أبواب وواجهات','درابزين زجاجي')" aria-label="درابزين زجاجي"></button>
+<button class="shein-dot" style="background:#777" data-img="sh.jpg.jpg" data-name="شاور" onclick="selectShein(event,this,'أبواب وواجهات','شاور')" aria-label="شاور"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
 </div>
 <div class="cat-title"><span>كارتنول — دبل قلاس — فايبر قلاس</span></div>
 <div class="grid">
-<div class="card" data-idx="8" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - أنظمة الواجهات</div><div class="card-top"><div><h3>أنظمة الواجهات والعزل</h3><p>حلول متقدمة للواجهات والعزل الحراري والصوتي</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - أنظمة الواجهات</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>حلول متقدمة للواجهات والعزل الحراري والصوتي، كارتنول ودبل قلاس وفايبر قلاس.</div><div class="prod-specs"><span>عزل حراري</span><span>عزل صوتي</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'أنظمة','كارتنول')">كارتنول <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أنظمة','دبل قلاس')">دبل قلاس — عازل <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'أنظمة','فايبر قلاس')">فايبر قلاس <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="9" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - الألمنيوم</div><div class="card-top"><div><h3>الألمنيوم</h3><p>أعمال ألمنيوم متكاملة للأبواب والفواصل والرفوف</p><span class="badge">4 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - الألمنيوم</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>أعمال ألمنيوم متكاملة للأبواب والفواصل والرفوف بجودة ومتانة عالية.</div><div class="prod-specs"><span>متانة</span><span>جودة عالية</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'ألمنيوم','أبواب مفصلية')">أبواب ألمنيوم مفصلية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','أبواب سحابة')">أبواب ألمنيوم سحابة <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','فواصل بارتشن')">فواصل ألمنيوم بارتشن <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ألمنيوم','رفوف')">رفوف ألمنيوم <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="8"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة أنظمة الواجهات - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="كارتنول.jpg" alt="أنظمة الواجهات" onerror="this.style.display='none'"><span>مساحة صورة - أنظمة الواجهات</span></div>
+<div class="card-top"><div><h3>أنظمة الواجهات والعزل</h3><p>حلول متقدمة للواجهات والعزل الحراري والصوتي</p><span class="badge">3 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>كارتنول</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#444" data-img="cr.jpg.jpg" data-name="كارتنول" onclick="selectShein(event,this,'أنظمة','كارتنول')" aria-label="كارتنول"></button>
+<button class="shein-dot" style="background:#888" data-img="dp.jpg.jpg" data-name="دبل قلاس" onclick="selectShein(event,this,'أنظمة','دبل قلاس')" aria-label="دبل قلاس"></button>
+<button class="shein-dot" style="background:#BBB" data-img="فايبر-قلاس.jpg" data-name="فايبر قلاس" onclick="selectShein(event,this,'أنظمة','فايبر قلاس')" aria-label="فايبر قلاس"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+<div class="card" data-idx="9"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة الألمنيوم - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="المنيوم-مفصلية.jpg" alt="الألمنيوم" onerror="this.style.display='none'"><span>مساحة صورة - الألمنيوم</span></div>
+<div class="card-top"><div><h3>الألمنيوم</h3><p>أعمال ألمنيوم متكاملة للأبواب والفواصل والرفوف</p><span class="badge">4 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>أبواب مفصلية</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#6B3A1F" data-img="المنيوم-مفصلية.jpg" data-name="أبواب مفصلية" onclick="selectShein(event,this,'ألمنيوم','أبواب مفصلية')" aria-label="أبواب مفصلية"></button>
+<button class="shein-dot" style="background:#888" data-img="المنيوم-سحابة.jpg" data-name="أبواب سحابة" onclick="selectShein(event,this,'ألمنيوم','أبواب سحابة')" aria-label="أبواب سحابة"></button>
+<button class="shein-dot" style="background:#AAA" data-img="المنيوم-بارتشن.jpg" data-name="فواصل بارتشن" onclick="selectShein(event,this,'ألمنيوم','فواصل بارتشن')" aria-label="فواصل بارتشن"></button>
+<button class="shein-dot" style="background:#CCC" data-img="rf.jpg.jpg" data-name="رفوف" onclick="selectShein(event,this,'ألمنيوم','رفوف')" aria-label="رفوف"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
 </div>
 <div class="cat-title"><span>الشبابيك</span></div>
 <div class="grid">
-<div class="card" data-idx="10" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - الشبابيك</div><div class="card-top"><div><h3>الشبابيك</h3><p>شبابيك ألمنيوم عملية ومتينة بجميع المقاسات</p><span class="badge">اضغط للعرض</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - الشبابيك</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span></div></div><div class="prod-desc"><b>وصف المنتج</b>شبابيك ألمنيوم عملية ومتينة بجميع المقاسات، مفصلية وسحابة، مع زجاج عاكس.</div><div class="prod-specs"><span>متينة</span><span>زجاج عاكس</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'شبابيك','مفصلية')">شبابيك ألمنيوم مفصلية <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'شبابيك','سحابة')">شبابيك سحابة <span class="check">✓</span></div></div><h4 style="margin-top:14px">اختر اللون</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'شبابيك','بني')"><span class="dot" style="background:#6B3A1F"></span> بني <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'شبابيك','أبيض')"><span class="dot" style="background:#fff"></span> أبيض <span class="check">✓</span></div></div><p style="font-size:16px;margin-top:10px;color:#9A9A93">نوع الزجاج: عاكس</p><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
-<div class="card" data-idx="11" onclick="toggleCard(this)"><span class="sold-badge">غير متوفر</span><div class="product-img">مساحة صورة - ديكورات</div><div class="card-top"><div><h3>ديكورات وتشطيبات</h3><p>تشطيبات وديكورات عصرية متكاملة</p><span class="badge">8 أنواع</span></div><div class="card-icon">—</div></div><button class="open-btn" onclick="event.stopPropagation();toggleCard(this.closest('.card'))">عرض الأنواع</button><div class="details"><div class="shein-gallery"><div class="sg-main">صورة المنتج - ديكورات</div><div class="sg-thumbs"><span>صورة 1</span><span>صورة 2</span><span>صورة 3</span></div></div><div class="prod-desc"><b>وصف المنتج</b>تشطيبات وديكورات عصرية متكاملة، بديل رخام وخشب وجبص بورد وسقف مستعار وغيرها.</div><div class="prod-specs"><span>عصرية</span><span>متكاملة</span></div><h4>اختر النوع</h4><div class="variants"><div class="variant" onclick="selectVar(event,this,'ديكور','بديل رخام')">بديل رخام <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','بديل خشب')">بديل خشب <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','جبص بورد')">جبص بورد <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','سقف مستعار')">سقف مستعار <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','ألواح عرض')">ألواح عرض <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','ألواح MDF')">ألواح خشب MDF <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','كلادن')">كلادن <span class="check">✓</span></div><div class="variant" onclick="selectVar(event,this,'ديكور','صيانة')">صيانة واستبدال <span class="check">✓</span></div></div><div class="selected-note"></div><a class="order-btn" href="#contact">اطلب الخدمة</a></div></div>
+<div class="card" data-idx="10"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة الشبابيك - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="شبابيك-مفصلية.jpg" alt="الشبابيك" onerror="this.style.display='none'"><span>مساحة صورة - الشبابيك</span></div>
+<div class="card-top"><div><h3>الشبابيك</h3><p>شبابيك ألمنيوم عملية ومتينة بجميع المقاسات</p><span class="badge">اضغط للعرض</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>مفصلية</b> - اللون: <b>بني</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#6B3A1F" data-img="wi1.jpg.jpg" data-name="مفصلية-ابيض" onclick="selectShein(event,this,'شبابيك','مفصلية')" aria-label="مفصلية"></button>
+<button class="shein-dot" style="background:#888" data-img="wi2.jpg.jpg" data-name="سحابة" onclick="selectShein(event,this,'شبابيك','سحابة')" aria-label="سحابة"></button>
+</div>
+<p style="font-size:15px;margin-top:8px;color:#9A9A93">نوع الزجاج: عاكس</p>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
+<div class="card" data-idx="11"><span class="sold-badge">غير متوفر</span>
+<div class="product-img">
+<!-- هنا صورة الديكورات - اكتبي اسم الصورة هنا -->
+<img class="prod-img" src="بديل-رخام.jpg" alt="ديكورات" onerror="this.style.display='none'"><span>مساحة صورة - ديكورات</span></div>
+<div class="card-top"><div><h3>ديكورات وتشطيبات</h3><p>تشطيبات وديكورات عصرية متكاملة</p><span class="badge">8 أنواع</span></div><div class="card-icon">—</div></div>
+<div class="shein-box">
+<div class="color-label">النوع: <b>بديل رخام</b></div>
+<div class="shein-dots">
+<button class="shein-dot selected" style="background:#DDD" data-img="pd1.jpg.jpg" data-name="بديل رخام" onclick="selectShein(event,this,'ديكور','بديل رخام')" aria-label="بديل رخام"></button>
+<button class="shein-dot" style="background:#8B5A2B" data-img="pd2.jpg.jpg" data-name="بديل خشب" onclick="selectShein(event,this,'ديكور','بديل خشب')" aria-label="بديل خشب"></button>
+<button class="shein-dot" style="background:#EEE" data-img="جبص-بورد.jpg" data-name="جبص بورد" onclick="selectShein(event,this,'ديكور','جبص بورد')" aria-label="جبص بورد"></button>
+<button class="shein-dot" style="background:#CCC" data-img="pd4.jpg.jpg" data-name="سقف مستعار" onclick="selectShein(event,this,'ديكور','سقف مستعار')" aria-label="سقف مستعار"></button>
+<button class="shein-dot" style="background:#999" data-img="الواح-عرض.jpg" data-name="ألواح عرض" onclick="selectShein(event,this,'ديكور','ألواح عرض')" aria-label="ألواح عرض"></button>
+<button class="shein-dot" style="background:#A67C52" data-img="pd3.jpg.jpg" data-name="ألواح MDF" onclick="selectShein(event,this,'ديكور','ألواح MDF')" aria-label="ألواح MDF"></button>
+<button class="shein-dot" style="background:#555" data-img="كلادن.jpg" data-name="كلادن" onclick="selectShein(event,this,'ديكور','كلادن')" aria-label="كلادن"></button>
+<button class="shein-dot" style="background:#777" data-img="صيانة.jpg" data-name="صيانة" onclick="selectShein(event,this,'ديكور','صيانة')" aria-label="صيانة"></button>
+</div>
+<a class="order-btn shein-order" href="#contact">اطلب الخدمة</a>
+</div></div>
 </div>
 </section>
 
@@ -296,7 +474,7 @@ footer{background:#080808;text-align:center;padding:30px;color:#777;border-top:1
 <script>
 setTimeout(()=>{document.getElementById('loader').classList.add('hide')},1600);
 document.addEventListener('click',function(e){
-  let b=e.target.closest('button,.btn,.variant,.open-btn,.order-btn,.whats,nav a');
+  let b=e.target.closest('button,.btn,.variant,.open-btn,.order-btn,.whats,nav a,.shein-dot');
   if(!b) return;
   let r=document.createElement('span'); r.className='ripple';
   let rect=b.getBoundingClientRect();
@@ -339,8 +517,25 @@ function showChangePass(){let b=document.getElementById('changePassBox');b.style
 function saveNewPass(){let a=document.getElementById('newPass1').value,b=document.getElementById('newPass2').value;if(!a){alert('اكتب كلمة السر الجديدة');return}if(a!==b){alert('كلمتا السر ما متطابقات');return}localStorage.setItem('almimar_pass',a);alert('اتغيرت ✅ من هسي الكلمة الجديدة هي الشغالة');document.getElementById('newPass1').value='';document.getElementById('newPass2').value='';document.getElementById('changePassBox').style.display='none'}
 function renderAdmin(){let q=(document.getElementById('adminSearch').value||'').toLowerCase();let list=document.getElementById('adminList');list.innerHTML='';document.querySelectorAll('.card[data-idx]').forEach(c=>{let idx=Number(c.dataset.idx);let name=c.querySelector('h3').innerText;if(q&&!name.toLowerCase().includes(q))return;let sold=isSold(idx);list.innerHTML+=`<div class="admin-row"><div><b>${name}</b></div><button onclick="toggleSold(${idx})" style="background:${sold?'#EF4444':'#25D366'};color:#fff">${sold?'غير متوفر ❌':'متوفر ✅'}</button></div>`});if(!list.innerHTML)list.innerHTML='<p style="text-align:center;color:#888;padding:14px">ما في نتيجة</p>'}
 function toggleSold(i){let sold=getSold();if(sold.includes(i)){sold=sold.filter(x=>x!==i)}else{sold.push(i)}localStorage.setItem('almimar_sold',JSON.stringify(sold));renderAdmin();applySold();}
-function toggleCard(card){let idx=Number(card.dataset.idx);if(isSold(idx)){return}const wasActive=card.classList.contains('active');document.querySelectorAll('.card').forEach(c=>{c.classList.remove('active');const b=c.querySelector('.open-btn');if(b)b.innerText='عرض الأنواع';});if(!wasActive){card.classList.add('active');const btn=card.querySelector('.open-btn');if(btn)btn.innerText='إخفاء الأنواع';}}
-function selectVar(e,el,cat,val){e.stopPropagation();const card=el.closest('.card');if(isSold(Number(card.dataset.idx))){return}card.querySelectorAll('.variant').forEach(v=>v.classList.remove('selected'));el.classList.add('selected');const note=card.querySelector('.selected-note');note.style.display='block';note.innerHTML='تم اختيار: '+cat+' - '+val;const o=document.getElementById('orderText');if(o)o.value='أرغب في: '+cat+' - '+val;}
+function toggleCard(card){return}
+function selectVar(e,el,cat,val){selectShein(e,el,cat,val)}
+function selectShein(e,el,cat,val){
+  if(e) e.stopPropagation();
+  const card=el.closest('.card');
+  if(isSold(Number(card.dataset.idx))){return}
+  card.querySelectorAll('.shein-dot').forEach(d=>d.classList.remove('selected'));
+  el.classList.add('selected');
+  let newImg = el.getAttribute('data-img');
+  let name = el.getAttribute('data-name') || val;
+  if(newImg){
+    let imgEl = card.querySelector('.prod-img');
+    if(imgEl){ imgEl.style.display='block'; imgEl.src=newImg; }
+  }
+  let label = card.querySelector('.color-label');
+  if(label){ label.innerHTML = label.textContent.includes('النوع') ? 'النوع: <b>'+name+'</b>' : 'اللون: <b>'+name+'</b>'; }
+  const o=document.getElementById('orderText');
+  if(o) o.value='أرغب في: '+cat+' - '+val;
+}
 function submitForm(e,form){e.preventDefault();const btn=document.getElementById('submitBtn');btn.innerHTML='جاري الإرسال...';btn.disabled=true;setTimeout(()=>{btn.innerHTML='تم إرسال طلبك بنجاح';setTimeout(()=>{btn.innerHTML='إرسال الطلب';btn.disabled=false;form.reset();},2200);},1000);}
 applySold();
 </script>
